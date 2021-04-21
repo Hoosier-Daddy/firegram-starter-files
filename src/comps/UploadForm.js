@@ -22,13 +22,16 @@ let UploadForm = ()=>{
     return (
         <div>
             <form>
+                <label>
                 <input type="file" onChange ={changeHandler}/>
+                <span>+</span>
+                </label>
             </form>
 
             <div className="output">
                 {file && <div>{file.name}</div>}
                 {error && <div>{error}</div>}
-                {file && <ProgressBar file={file}/>}
+                {file && <ProgressBar file={file} setFile={setFile}/>}
             </div>
 
         </div>
